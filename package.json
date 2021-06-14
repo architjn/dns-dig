@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/architjn/dns-dig.git"
+  },
   "author": "Archit Jain",
   "license": "ISC"
 }
