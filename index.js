@@ -39,7 +39,6 @@ var txt = function (domain) {
 	});
 }
 
-txt('infosecupdates.com.WYCIUUzLRt.spf.kdmarc.com').then(r => {console.log(r);});
 module.exports = {
 	resolveIp4: ip4,
 	resolveCname: CNAME,
