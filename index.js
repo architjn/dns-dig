@@ -31,6 +31,7 @@ var txt = function (domain) {
 			return r.map(r => {
 				if (r.startsWith("\"")) r = r.substring(1)
 				if (r.endsWith("\"")) r = r.substring(0, r.length - 1)
+				r = r.split('" "').join('');
 				return r;
 			});
 		}
@@ -38,6 +39,7 @@ var txt = function (domain) {
 	});
 }
 
+txt('infosecupdates.com.WYCIUUzLRt.spf.kdmarc.com').then(r => {console.log(r);});
 module.exports = {
 	resolveIp4: ip4,
 	resolveCname: CNAME,
