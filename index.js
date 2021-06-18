@@ -28,12 +28,14 @@ var txt = function (domain) {
 	return command(['TXT', domain], { short: true }).then(r => {
 		if (r && r.length > 0) {
 			r = r.split('\n');
-			return r.map(r => {
+			r = r.map(r => {
+				if (!r.startsWith('"')) return undefined;
 				if (r.startsWith("\"")) r = r.substring(1)
 				if (r.endsWith("\"")) r = r.substring(0, r.length - 1)
 				r = r.split('" "').join('');
 				return r;
 			});
+			return r.filter(r => r != undefined);
 		}
 		throw new Error(`queryTxt ENOTFOUND ${domain}`)
 	});
