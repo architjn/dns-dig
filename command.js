@@ -17,6 +17,9 @@ module.exports = (args = [], options = {}) => {
 
 		process.stdout.on('end', () => {
 			try {
+				if (shellOutput.indexOf('connection timed out; no servers could be reached') != -1) {
+					reject(new Error('Servers are not reachable'));
+				}
 				resolve(shellOutput.replace(/\n$/, ''));
 			} catch (err) {
 				reject(err);
