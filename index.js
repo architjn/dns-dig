@@ -10,6 +10,11 @@ var CNAME = function (domain, options = {}) {
 	return command(['CNAME', domain, ...host], { short: true }).then(r => { if (r && r.length > 0) return r.split('\n'); throw new Error(`queryCname ENOTFOUND ${domain}`) });
 }
 
+var A = function (domain, options = {}) {
+	let host = options.host ? [`@${options.host}`] : [];
+	return command(['A', domain, ...host], { short: true }).then(r => { if (r && r.length > 0) return r.split('\n'); throw new Error(`queryA ENOTFOUND ${domain}`) });
+}
+
 var mx = function (domain, options = {}) {
 	let host = options.host ? [`@${options.host}`] : [];
 	return command(['MX', domain, ...host], { short: true }).then(r => {
@@ -51,5 +56,6 @@ module.exports = {
 	resolveCname: CNAME,
 	resolveMx: mx,
 	resolveNs: ns,
-	resolveTxt: txt
+	resolveA: A,
+	resolveTxt: txt,
 }
