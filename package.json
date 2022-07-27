@@ -1,15 +1,38 @@
 {
   "name": "dns-dig",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rm -rf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/architjn/dns-dig.git"
   },
+  "keywords": [
+    "spf",
+    "txt",
+    "dns",
+    "dig",
+    "domain ip"
+  ],
   "author": "Archit Jain",
-  "license": "ISC"
+  "license": "ISC",
+  "maintainers": [
+    {
+      "name": "Archit Jain",
+      "email": "architjn93@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/architjn/dns-dig/issues"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.1"
+  }
 }
