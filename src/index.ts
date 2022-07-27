@@ -57,8 +57,3 @@ export const resolveTxt = async (domain: string, options?: Options): Promise<str
   }
   throw new Error(`queryTxt ENOTFOUND ${domain}`);
 };
-
-(async () => {
-  const ans = await resolveTxt("google.com");
-  console.log(ans);
-})();
